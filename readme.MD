@@ -44,3 +44,4 @@ This moduleis developed by myself & creating following resorces.
 * public_subnet_ids: A list of 2 public subnet ids created
 * private_subnet_ids: A list of 2 private subnet ids created
 * database_subnet_ids: A list of 2 database subnet ids created
+* igw_id: internet gateway created.
