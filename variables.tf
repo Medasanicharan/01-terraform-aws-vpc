@@ -1,10 +1,10 @@
 ## poject ##
 
-variable project_name {
+variable "project_name" {
     type = string
 }
 
-variable environment {
+variable "environment" {
     type = string
 }
 

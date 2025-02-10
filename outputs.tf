@@ -1,5 +1,5 @@
 output "azs" {
-    value = data.aws_availability_zones.available.names
+    value = slice(data.aws_availability_zones.available.names, 0, 2) # data.aws_availability_zones.available.names
 }
 
 output "vpc_id" {
@@ -20,7 +20,7 @@ output "database_subnet_ids" {
 }
 
 output "database_subnet_group_ids" {
-    value = aws_db_subnet_group.default.id
+    value = aws_db_subnet_group.default.id 
 }
 
 output "igw_id" {
