@@ -89,7 +89,7 @@ resource "aws_route_table" "public" {
     var.common_tags,
     var.public_route_table_tags,
     {
-    Name = "${var.project_name}-public-${data.aws_availability_zones.available.names}"
+    Name = "${var.project_name}-public-route-table"
   }
   )
 }
@@ -104,7 +104,7 @@ resource "aws_route_table" "private" {
     var.common_tags,
     var.private_route_table_tags,
     {
-    Name = "${var.project_name}-private-${data.aws_availability_zones.available.names}"
+    Name = "${var.project_name}-private-route-table"
   }
   )
 }
@@ -119,7 +119,7 @@ resource "aws_route_table" "database" {
     var.common_tags,
     var.database_route_table_tags,
     {
-    Name = "${var.project_name}-database-${data.aws_availability_zones.available.names}"
+    Name = "${var.project_name}-database-route-table"
   }
   )
 }
@@ -211,7 +211,7 @@ resource "aws_route_table_association" "database" {
 ## database subnet group ##
  
  resource "aws_db_subnet_group" "default" {
-  name       = "${var.project_name}-db-subnet-group-1" # expense-dev
+  name       = "${local.resource_name}" # expense-dev
   subnet_ids = aws_subnet.database[*].id
 
   tags = merge (
