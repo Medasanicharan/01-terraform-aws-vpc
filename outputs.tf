@@ -3,6 +3,14 @@ output "azs" {
     # data.aws_availability_zones.available.names
 }
 
+output "default_vpc" {
+  value = data.aws_vpc.default_vpc.id
+}
+
+output "default_vpc_main" {
+  value = data.aws_route_table.main.id
+}
+
 output "vpc_id" {
     value = aws_vpc.main.id
 }
