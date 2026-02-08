@@ -4,7 +4,7 @@ output "azs" {
 }
 
 output "default_vpc" {
-  value = data.aws_vpc.default_vpc.id
+  value = data.aws_vpc.default.id
 }
 
 output "default_vpc_main" {
